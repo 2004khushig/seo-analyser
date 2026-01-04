@@ -8,7 +8,7 @@ export default function Report() {
   const normalizedUrl = url?.startsWith("http")
     ? url
     : `https://${url}`;
-    
+
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -85,7 +85,7 @@ export default function Report() {
         </body>
       </html>
     `);
-    
+
     reportWindow.document.close();
     reportWindow.print();
   };
@@ -95,7 +95,7 @@ export default function Report() {
 
     setLoading(true);
 
-    fetch(fetch(`${import.meta.env.VITE_API_URL}/analyze/site`), {
+    fetch(`${import.meta.env.VITE_API_URL}/analyze/site`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: normalizedUrl }),
