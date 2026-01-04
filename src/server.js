@@ -11,6 +11,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("🚀 SEO Analyzer API is running");
+});
+
 app.post("/analyze/site", async (req, res) => {
   try {
     const { url } = req.body;
