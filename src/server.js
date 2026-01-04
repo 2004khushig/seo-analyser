@@ -49,6 +49,7 @@ app.post("/analyze/site", async (req, res) => {
 });
 
 
-app.listen(5000, () => {
-  console.log("🚀 SEO Analyzer API running on http://localhost:5000");
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`🚀 SEO Analyzer server running on port ${PORT}`);
 });
