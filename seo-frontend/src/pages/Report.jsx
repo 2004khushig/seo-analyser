@@ -95,7 +95,7 @@ export default function Report() {
 
     setLoading(true);
 
-    fetch("http://localhost:5000/analyze/site", {
+    fetch(fetch(`${import.meta.env.VITE_API_URL}/analyze/site`), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: normalizedUrl }),
